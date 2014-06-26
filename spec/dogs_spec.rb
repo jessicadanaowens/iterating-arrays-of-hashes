@@ -22,7 +22,7 @@ describe Dogs do
 
   describe "#large_dogs_names" do
     it "returns all of the big dogs" do
-      expect(dogs.large_dog_names).to match_array(["Fido", "Bruiser", "Beast"])
+      expect(dogs.large_dogs_names).to match_array(["Fido", "Bruiser", "Beast"])
     end
   end
 
@@ -41,13 +41,13 @@ describe Dogs do
 
   describe "#owners" do
     it "returns all of the owners" do
-      expect(dogs.owners).to match_array(['Joe Smith', 'Sarah Smith', 'Andrew Beter'])
+      expect(dogs.owners).to match_array(['Joe Smith', 'Sarah Darnum', 'Andrew Beter'])
     end
   end
 
   describe "#average_owners" do
     it "returns all average owners" do
-      expect(dogs.average_owners).to match_array(['Sarah Smith', 'Andrew Beter'])
+      expect(dogs.average_owners).to match_array(['Sarah Darnum', 'Andrew Beter'])
     end
   end
 
@@ -87,15 +87,17 @@ describe Dogs do
 
   describe "#change_owner" do
     it "changes an owner based on first name" do
-      # fill me in!
+      owner_name = dogs.change_owner("Fido")
+      expect(owner_name.length).to eq(1)
+      expect(owner_name).to include("Sarah" || "Andrew")
     end
 
     it "changes the owner based on last name" do
-      # fill me in!
+      expect(owner_name).to include("Darnum" || "Beter")
     end
 
     it "changes the owner based on a full name" do
-      # fill me in!
+
     end
 
     it "doesn't change the owner if no owner is found" do
